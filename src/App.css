@@ -49,10 +49,6 @@
   padding: 10px;
 }
 
-.search-content {
-  align-content: row;
-}
-
 .product-list {
   display: flex;
   flex-basis: 50%;

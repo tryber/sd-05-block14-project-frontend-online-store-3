@@ -9,10 +9,10 @@ class ProductList extends React.Component {
           return (
             <div data-testid="product" className="product-card" key={product.id}>
               <p>{product.title}</p>
-              <img src={product.thumbnail} alt={product.title}/>
+              <img src={product.thumbnail} alt={product.title} />
               <p>{product.price}</p>
             </div>
-          )
+          );
         })}
       </div>
     );
