@@ -4,18 +4,16 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      busca: '',
-    }
-  }
+    this.state = { busca: '' };
+  };
 
   render() {
     return (
       <div>
         <input data-testid="query-input" placeholder="Faça sua busca" />
-        <button data-testid="query-button" type="button">Buscar</button>
+        <button data-testid="query-button" type="button">Pesquisar</button>
       </div>
-    )
+    );
   }
 }
 
