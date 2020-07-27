@@ -8,7 +8,7 @@ class Categories extends React.Component {
   }
 
   componentDidMount() {
-    getCategories().then(response => {
+    getCategories().then((response) => {
       this.setState({ categories: response });
     });
   }
