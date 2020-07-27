@@ -9,7 +9,7 @@ class ProductCard extends React.Component {
         <img src={product.thumbnail} alt={product.title} />
         <p>{product.price}</p>
       </div>
-    )
+    );
   }
 }
 
