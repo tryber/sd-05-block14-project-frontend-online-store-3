@@ -9,9 +9,7 @@ class Details extends React.Component {
 
   componentDidMount() {
     const {
-      match: {
-        params: { id },
-      },
+      match: { params: { id }, },
     } = this.props;
     fetch(`https://api.mercadolibre.com/items/${id}`)
       .then((data) => data.json())
