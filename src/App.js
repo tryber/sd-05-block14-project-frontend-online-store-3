@@ -4,6 +4,7 @@ import './App.css';
 // import { getProductsFromCategoryAndQuery } from './services/api';
 import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
+import Details from './pages/Details';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/shopping-cart" component={ShoppingCart} />
+        <Route path="/details/:id" component={Details} />
       </Switch>
     </Router>
   );
