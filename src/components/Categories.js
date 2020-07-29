@@ -17,9 +17,20 @@ class Categories extends React.Component {
     const { categories } = this.state;
     return (
       <div>
-        <ul>
-          {categories.map((obj) => <li data-testid="category" key={obj.id}>{obj.name}</li>)}
-        </ul>
+        <h3>Categorias:</h3>
+        {categories.map((obj) => (
+          <div key={obj.id}>
+            <label data-testid="category" htmlFor={obj.id}>
+              <input
+                type="radio"
+                name="categories"
+                id={obj.id}
+                onClick={() => this.props.onClick(obj)}
+              />
+              {obj.name}
+            </label>  
+          </div>
+        ))}
       </div>
     );
   }

@@ -9,8 +9,11 @@ class ProductCard extends React.Component {
         <Link to={`/details/${product.id}`} data-testid="product-detail-link">
           <p>{product.title}</p>
           <img src={product.thumbnail} alt={product.title} />
-          <p>{product.price}</p>
+          <p>R$ {product.price}</p>
         </Link>
+        <button data-testid="product-add-to-cart" onClick={() => this.props.onClick(product)}>
+          Adicionar ao Carrinho
+        </button>
       </div>
     );
   }
