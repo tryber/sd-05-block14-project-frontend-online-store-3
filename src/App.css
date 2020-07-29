@@ -45,6 +45,7 @@
 .right-content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-left: 10px;
   max-width: 70%;
   padding: 10px;

@@ -46,6 +46,10 @@ class ProductList extends React.Component {
       api.getProductsFromCategoryAndQuery(cat.id).then((data) => {
         this.setState({ results: data.results });
       });
+    } else {
+      api.getProductsFromCategoryAndQuery(cat.id, this.state.query).then((data) => {
+        this.setState({ results: data.results });
+      });
     }
   }
 
