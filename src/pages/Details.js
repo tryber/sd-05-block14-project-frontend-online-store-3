@@ -9,9 +9,7 @@ class Details extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      match: { params: { id }, },
-    } = this.props;
+    const { match: { params: { id }, }, } = this.props;
     fetch(`https://api.mercadolibre.com/items/${id}`)
       .then((data) => data.json())
       .then((result) => this.setState({ product: result }));
@@ -22,12 +20,12 @@ class Details extends React.Component {
     return product ? (
       <div>
         <div data-testid="product-detail-name">{product.title}</div>
-        <img src={product.thumbnail} alt="Produto"/>
+        <img src={ product.thumbnail } alt="Produto"/>
         <p>R${product.price}</p>
-        <textarea data-testid="product-detail-evaluation"></textarea>
+        <textarea data-testid="product-detail-evaluation" />
         <CartButton />
         <Link to="/">Back</Link>
-        </div>
+      </div>
     ) : (
       <div>loading...</div>
     );

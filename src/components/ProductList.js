@@ -67,9 +67,9 @@ class ProductList extends React.Component {
             <SearchBar onClick={this.handleClick} />
           </div>
           <div className="product-list">
-            {results.map((product) =>
+            {results.map((product) => (
               <ProductCard product={product} key={product.id} onClick={this.addToCart} />
-            )}
+            ))}
           </div>
         </div>
       </div>
