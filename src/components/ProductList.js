@@ -2,6 +2,7 @@ import React from 'react';
 import * as api from '../services/api';
 import ProductCard from './ProductCard';
 import SearchBar from './SearchBar';
+import Categories from './Categories';
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class ProductList extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.searchCategories = this.searchCategories.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +24,8 @@ class ProductList extends React.Component {
   }
 
   async handleClick(busca) {
+    console.log(busca)
+    console.log(this.state.categoryId)
     await api.getProductsFromCategoryAndQuery(this.state.categoryId, busca).then((data) => {
       this.setState({ results: data.results, query: busca })
     });
@@ -34,17 +38,37 @@ class ProductList extends React.Component {
     localStorage.setItem('carrinho', JSON.stringify(this.state.selected));
   }
 
+  searchCategories(cat) {
+    this.setState({ categoryId: cat.id });
+    if(!this.state.query) {
+      api.getProductsFromCategoryAndQuery(cat.id).then((data) => {
+        this.setState({ results: data.results });
+      });
+    };
+  }
+
   render() {
     const { results } = this.state;
-    return (
+    if (!results) return (
       <div>
         <div>
           <SearchBar onClick={this.handleClick} />
         </div>
-        <div className="product-list">
-          {results.map((product) => <ProductCard product={product} key={product.id} onClick={this.addToCart} />)}
-        </div>
+        <p>Nenhum produto foi encontrado</p>
       </div>
+    );
+    return (
+      <div className="home">
+        <Categories onClick={this.searchCategories}/>
+        <div className="right-content">
+          <div className="search-content">
+              <SearchBar onClick={this.handleClick} />
+          </div>
+          <div className="product-list">
+            {results.map((product) => <ProductCard product={product} key={product.id} onClick=  {this.addToCart} />)}
+          </div>
+        </div>
+      </div> 
     );
   }
 }
