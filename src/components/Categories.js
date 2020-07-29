@@ -4,7 +4,8 @@ import { getCategories } from '../services/api';
 class Categories extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { categories: [],
+    this.state = { 
+      categories: [],
       checked: false,
     };
   }

@@ -15,7 +15,7 @@ class Home extends React.Component {
               </p>
             </div>
           </div>
-            <CartButton />
+          <CartButton />
         </div>
       </div>
     );
