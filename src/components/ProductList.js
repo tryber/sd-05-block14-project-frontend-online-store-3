@@ -22,7 +22,7 @@ class ProductList extends React.Component {
     this.getCart();
   }
 
-  getCart = () => {
+  getCart() {
     const cart = JSON.parse(localStorage.getItem('carrinho'));
     if (cart) this.setState({ selected: cart });
   }

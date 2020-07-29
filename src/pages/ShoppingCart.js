@@ -11,7 +11,7 @@ class ShoppingCart extends React.Component {
     this.getCart();
   }
 
-  getCart = () => {
+  getCart() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho'));
     if (carrinho === null) return this.setState({ cart: 0 });
     return this.setState({ cart: carrinho });
