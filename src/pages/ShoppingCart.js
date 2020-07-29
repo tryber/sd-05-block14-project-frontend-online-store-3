@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CartButton from '../components/CartButton';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class ShoppingCart extends React.Component {
       return (
         <div>
           <Link to="/">Home</Link>
+          <CartButton />
           <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
         </div>
       );
@@ -31,6 +33,7 @@ class ShoppingCart extends React.Component {
         <Link to="/">Home</Link>
         {this.state.cart.map((product) => (
           <div key={product.id}>
+            <p data-testid="shopping-cart-empty-message"></p>
             <p data-testid="shopping-cart-product-name">{product.title}</p>
             <img src={product.thumbnail} alt={product.title} />
             <p data-testid="shopping-cart-product-quantity">1</p>
