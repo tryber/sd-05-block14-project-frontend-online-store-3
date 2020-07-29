@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CartButton from '../components/CartButton';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
