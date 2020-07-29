@@ -25,6 +25,7 @@ class Categories extends React.Component {
                 type="radio"
                 name="categories"
                 id={obj.id}
+                onClick={() => this.props.onClick(obj)}
               />
               {obj.name}
             </label>  

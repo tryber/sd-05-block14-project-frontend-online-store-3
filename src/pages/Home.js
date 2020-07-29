@@ -1,6 +1,5 @@
 import React from 'react';
 import CartButton from '../components/CartButton';
-import Categories from '../components/Categories';
 import ProductList from '../components/ProductList';
 
 class Home extends React.Component {
@@ -8,7 +7,6 @@ class Home extends React.Component {
     return (
       <div>
         <div className="home">
-          <Categories />
           <div className="right-content">
             <div className="search-content">
               <ProductList />
