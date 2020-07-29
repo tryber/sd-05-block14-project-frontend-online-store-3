@@ -4,7 +4,9 @@ import { getCategories } from '../services/api';
 class Categories extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { categories: [] };
+    this.state = { categories: [],
+      checked: false,
+    };
   }
 
   componentDidMount() {
@@ -14,7 +16,7 @@ class Categories extends React.Component {
   }
 
   render() {
-    const { categories } = this.state;
+    const { categories, checked } = this.state;
     return (
       <div>
         <h3>Categorias:</h3>
@@ -22,9 +24,10 @@ class Categories extends React.Component {
           <div key={obj.id}>
             <label data-testid="category" htmlFor={obj.id}>
               <input
-                type="radio"
+                type="checkbox"
                 name="categories"
                 id={obj.id}
+                checked={checked}
                 onClick={() => this.props.onClick(obj)}
               />
               {obj.name}
