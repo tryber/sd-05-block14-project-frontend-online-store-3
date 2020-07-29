@@ -29,7 +29,7 @@ class ProductList extends React.Component {
 
   async handleClick(busca) {
     await api.getProductsFromCategoryAndQuery(this.state.categoryId, busca).then((data) => {
-      this.setState({ results: data.results, query: busca })
+      this.setState({ results: data.results, query: busca });
     });
   }
 
@@ -54,9 +54,7 @@ class ProductList extends React.Component {
     if (!results) {
       return (
         <div>
-          <div>
-            <SearchBar onClick={this.handleClick} />
-          </div>
+          <SearchBar onClick={this.handleClick} />
           <p>Nenhum produto foi encontrado</p>
         </div>
       );
