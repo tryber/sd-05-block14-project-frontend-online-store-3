@@ -11,7 +11,7 @@ class ProductCard extends React.Component {
           <img src={product.thumbnail} alt={product.title} />
           <p>R$ {product.price}</p>
         </Link>
-        <button data-testid="product-add-to-cart" onClick={() => console.log('clicou aqui')}>
+        <button data-testid="product-add-to-cart" onClick={() => this.props.onClick(product)}>
           Adicionar ao Carrinho
         </button>
       </div>

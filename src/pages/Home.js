@@ -1,7 +1,6 @@
 import React from 'react';
 import CartButton from '../components/CartButton';
 import Categories from '../components/Categories';
-import SearchBar from '../components/SearchBar';
 import ProductList from '../components/ProductList';
 
 class Home extends React.Component {

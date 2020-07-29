@@ -1,21 +1,39 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cart: 0,
-    }
+    };
+  }
+
+  componentDidMount() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho'));
+    if (carrinho === null) return this.setState({ cart: 0 });
+    return this.setState({ cart: carrinho });
   }
 
   render() {
     if (this.state.cart === 0) {
-      return <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+      return (
+        <div>
+          <Link to="/">Home</Link>
+          <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+        </div>
+      )
     }
     return (
       <div>
-        <p data-testid="shopping-cart-product-name"></p>
-        <p data-testid="shopping-cart-product-quantity"></p>
+        <Link to="/">Home</Link>
+        {this.state.cart.map((product) => (
+          <div key={product.id}>
+            <p data-testid="shopping-cart-product-name">{product.title}</p>
+            <img src={product.thumbnail} alt={product.title} />
+            <p data-testid="shopping-cart-product-quantity">1</p>
+          </div>
+        ))}
       </div>
     );
   }
