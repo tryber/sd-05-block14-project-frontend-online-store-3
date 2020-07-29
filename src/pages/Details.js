@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartButton from '../components/CartButton';
+// import AddButton from '../components/AddButton';
 
 class Details extends React.Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class Details extends React.Component {
         <img src={product.thumbnail} alt="Produto" />
         <p>R${product.price}</p>
         <textarea data-testid="product-detail-evaluation" />
+        {/*<AddButton data-testId="product-detail-add-to-cart" product={product} add={add} />*/}
+        {/*<button data-testid="product-detail-add-to-cart" onClick={() => this.props.onClick(product)}>
+          Adicionar ao Carrinho
+        </button>*/}
         <CartButton />
         <Link to="/">Back</Link>
       </div>
