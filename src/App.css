@@ -39,11 +39,12 @@
 
 .home {
   display: flex;
+  justify-content: space-between;
 }
 
 .right-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   margin-left: 10px;
   max-width: 70%;
   padding: 10px;

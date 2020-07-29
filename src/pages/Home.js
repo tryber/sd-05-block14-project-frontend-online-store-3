@@ -14,8 +14,8 @@ class Home extends React.Component {
                 Digite algum termo de pesquisa ou escolha uma categoria.
               </p>
             </div>
-            <CartButton />
           </div>
+            <CartButton />
         </div>
       </div>
     );
