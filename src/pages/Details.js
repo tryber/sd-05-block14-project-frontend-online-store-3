@@ -9,9 +9,8 @@ class Details extends React.Component {
   }
 
   componentDidMount() {
-    const { match: { params: { id }, } } = this.props;
-    fetch(`https://api.mercadolibre.com/items/${id}`)
-      .then((data) => data.json())
+    const { match: { params: { id } } } = this.props;
+    fetch(`https://api.mercadolibre.com/items/${id}`).then((data) => data.json())
       .then((result) => this.setState({ product: result }));
   }
 
