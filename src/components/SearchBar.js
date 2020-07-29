@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
           data-testid="query-input"
           placeholder="Faça sua busca"
         />
-        <button 
+        <button
           onClick={() => this.props.onClick(this.state.busca)}
           data-testid="query-button"
         >

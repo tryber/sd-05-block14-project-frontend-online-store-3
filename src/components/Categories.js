@@ -28,7 +28,7 @@ class Categories extends React.Component {
                 onClick={() => this.props.onClick(obj)}
               />
               {obj.name}
-            </label>  
+            </label>
           </div>
         ))}
       </div>

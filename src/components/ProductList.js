@@ -19,13 +19,15 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
+    this.getCart();
+  }
+
+  getCart = () => {
     const cart = JSON.parse(localStorage.getItem('carrinho'));
     if (cart) this.setState({ selected: cart });
   }
 
   async handleClick(busca) {
-    console.log(busca)
-    console.log(this.state.categoryId)
     await api.getProductsFromCategoryAndQuery(this.state.categoryId, busca).then((data) => {
       this.setState({ results: data.results, query: busca })
     });
@@ -40,35 +42,39 @@ class ProductList extends React.Component {
 
   searchCategories(cat) {
     this.setState({ categoryId: cat.id });
-    if(!this.state.query) {
+    if (!this.state.query) {
       api.getProductsFromCategoryAndQuery(cat.id).then((data) => {
         this.setState({ results: data.results });
       });
-    };
+    }
   }
 
   render() {
     const { results } = this.state;
-    if (!results) return (
-      <div>
+    if (!results) {
+      return (
         <div>
-          <SearchBar onClick={this.handleClick} />
+          <div>
+            <SearchBar onClick={this.handleClick} />
+          </div>
+          <p>Nenhum produto foi encontrado</p>
         </div>
-        <p>Nenhum produto foi encontrado</p>
-      </div>
-    );
+      );
+    }
     return (
       <div className="home">
-        <Categories onClick={this.searchCategories}/>
+        <Categories onClick={this.searchCategories} />
         <div className="right-content">
           <div className="search-content">
-              <SearchBar onClick={this.handleClick} />
+            <SearchBar onClick={this.handleClick} />
           </div>
           <div className="product-list">
-            {results.map((product) => <ProductCard product={product} key={product.id} onClick=  {this.addToCart} />)}
+            {results.map((product) =>
+              <ProductCard product={product} key={product.id} onClick={this.addToCart} />
+            )}
           </div>
         </div>
-      </div> 
+      </div>
     );
   }
 }

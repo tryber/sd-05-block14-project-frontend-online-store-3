@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cart: 0,
-    };
+    this.state = { cart: 0 };
   }
 
   componentDidMount() {
+    this.getCart();
+  }
+
+  getCart = () => {
     const carrinho = JSON.parse(localStorage.getItem('carrinho'));
     if (carrinho === null) return this.setState({ cart: 0 });
     return this.setState({ cart: carrinho });
@@ -22,7 +24,7 @@ class ShoppingCart extends React.Component {
           <Link to="/">Home</Link>
           <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
         </div>
-      )
+      );
     }
     return (
       <div>
