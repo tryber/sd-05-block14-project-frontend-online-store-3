@@ -23,7 +23,7 @@ class Details extends React.Component {
         <img src={product.thumbnail} alt="Produto" />
         <p>R${product.price}</p>
         <textarea data-testid="product-detail-evaluation" />
-        {/* <button 
+        {/* <button
             data-testid="product-detail-add-to-cart"
             onClick={() => this.props.onClick(product)}
           >
