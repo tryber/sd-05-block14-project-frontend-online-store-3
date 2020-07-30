@@ -24,7 +24,7 @@ class Details extends React.Component {
         <p>R${product.price}</p>
         <textarea data-testid="product-detail-evaluation" />
         {/* <AddButton data-testId="product-detail-add-to-cart" product={product} add={add} /> */}
-        {/* <button data-testid="product-detail-add-to-cart" 
+        {/*<button data-testid="product-detail-add-to-cart"
         onClick={() => this.props.onClick(product)}>
           Adicionar ao Carrinho
         </button> */ }
