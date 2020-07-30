@@ -25,6 +25,6 @@ const estados =
     'SC',
     'SP',
     'SE',
-    'TO', ]
+    'TO'];
 
 export default estados;
