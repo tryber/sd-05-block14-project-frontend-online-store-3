@@ -1,11 +1,10 @@
 .cards {
-  width: 50%;
   box-sizing: border-box;
+  width: 50%;
 }
 
 .imagem {
   display: flex;
-  justify-self: flex-end;
   width: 100px;
   height: 90px;
 }

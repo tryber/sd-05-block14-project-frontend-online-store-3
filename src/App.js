@@ -4,7 +4,6 @@ import './App.css';
 import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
 import Details from './pages/Details';
-import PaymentMethod from './components/PaymentMethod'
 
 function App() {
   return (

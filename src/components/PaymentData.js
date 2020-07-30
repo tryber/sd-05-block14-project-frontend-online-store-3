@@ -18,7 +18,7 @@ const formasDePagar = [
     value: 'Elo',
     imagePath: 'https://logodownload.org/wp-content/uploads/2017/04/elo-logo-4-1.png',
     imgEInput: 'cards',
-  }
+  },
 ];
 
 export default formasDePagar;
