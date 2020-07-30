@@ -13,7 +13,7 @@ class FormComprador extends React.Component {
       endereco: '',
       complemento: '',
       numero: '',
-      Cidade: '' 
+      Cidade: ''
     };
     this.atdad = this.atdad.bind(this);
   }
@@ -24,8 +24,8 @@ class FormComprador extends React.Component {
   }
 
   render() {
-    //variavel array que contem os nomes para diminuir o tamanho do input
-    const arr = ["checkout-fullname", "checkout-cpf", "checkout-email", "checkout-phone", "checkout-cep", "checkout-address"];
+    // variavel array que contem os nomes para diminuir o tamanho do input
+    const arr = ['checkout-fullname', 'checkout-cpf', 'checkout-email', 'checkout-phone', 'checkout-cep', 'checkout-address'];
     return (
       <div>
         <form name="formComprador" method="get">
