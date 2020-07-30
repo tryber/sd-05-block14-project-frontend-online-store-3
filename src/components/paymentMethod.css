@@ -1,0 +1,11 @@
+.cards {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.imagem {
+  display: flex;
+  width: 100px;
+  height: 90px;
+}
+
