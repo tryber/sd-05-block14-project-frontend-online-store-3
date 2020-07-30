@@ -13,12 +13,6 @@ class ReviewCart extends React.Component {
     this.agrupador();
   }
 
-  getCart() {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho'));
-    if (carrinho === null) return this.setState({ cart: 0 });
-    return this.setState({ cart: carrinho });
-  }
-
   agrupador() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho'));
     const resumo = [];
