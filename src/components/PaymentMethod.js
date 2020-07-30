@@ -21,16 +21,16 @@ class PaymentMethod extends React.Component {
         <h2>Opções de pagamento:</h2>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           {formasDePagar.map((card) => (
-              <RadioInput
-                key={card.value}
-                value={card.value}
-                escolhido={payMethod}
-                onChange={this.stateUpdate}
-                imagePath={card.imagePath}
-                imgEInput={card.imgEInput}
-              />
-            );
-          )}
+            <RadioInput
+              key={card.value}
+              value={card.value}
+              escolhido={payMethod}
+              onChange={this.stateUpdate}
+              imagePath={card.imagePath}
+              imgEInput={card.imgEInput}
+            />
+          ))
+        }
         </div>
       </div>
     );
