@@ -24,8 +24,9 @@ class ReviewCart extends React.Component {
           }
         });
       } else {
-        item.quantity = 1;
-        resumo.push(item);
+        const item1 = item;
+        item1.quantity = 1;
+        resumo.push(item1);
       }
     });
     this.setState({ resumo });
@@ -42,7 +43,7 @@ class ReviewCart extends React.Component {
               <p data-testid="shopping-cart-product-name">{product.title}</p>
               <img src={product.thumbnail} alt={product.title} />
               <p data-testid="shopping-cart-product-quantity">Quantidade:{product.quantity}</p>
-              <p> R${parseInt(product.quantity * product.price * 100) / 100}</p>
+              <p> R${parseInt(product.quantity * product.price * 100, 10) / 100}</p>
             </div>
           ))}
         </div>
