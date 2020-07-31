@@ -18,17 +18,14 @@ class Details extends React.Component {
 
   getCart() {
     const cart = JSON.parse(localStorage.getItem('carrinho'));
-    if (cart) this.setState({ fullCart: cart });
+    if (cart) return this.setState({ fullCart: cart });
+    this.setState({ fullCart: [] });
   }
 
   addToCart(product) {
     const cart = this.state.fullCart;
-    if (cart === undefined) {
-      return this.setState({ fullCart: product });
-    } else {
-      cart.push(product);
-      this.setState({ fullCart: cart });
-    }
+    cart.push(product);
+    this.setState({ fullCart: cart });
     localStorage.setItem('carrinho', JSON.stringify(this.state.fullCart));
   }
 
