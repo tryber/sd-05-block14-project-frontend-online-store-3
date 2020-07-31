@@ -13,6 +13,23 @@ class Details extends React.Component {
     const { match: { params: { id } } } = this.props;
     fetch(`https://api.mercadolibre.com/items/${id}`).then((data) => data.json())
       .then((result) => this.setState({ product: result }));
+    this.getCart();
+  }
+
+  getCart() {
+    const cart = JSON.parse(localStorage.getItem('carrinho'));
+    if (cart) this.setState({ fullCart: cart });
+  }
+
+  addToCart(product) {
+    const cart = this.state.fullCart;
+    if (cart === undefined) {
+      return this.setState({ fullCart: product });
+    } else {
+      cart.push(product);
+      this.setState({ fullCart: cart });
+    }
+    localStorage.setItem('carrinho', JSON.stringify(this.state.fullCart));
   }
 
   render() {
@@ -23,13 +40,12 @@ class Details extends React.Component {
         <img src={product.thumbnail} alt="Produto" />
         <p>R${product.price}</p>
         <textarea data-testid="product-detail-evaluation" />
-        {/* <button
+        <button
             data-testid="product-detail-add-to-cart"
-            onClick={() => this.props.onClick(product)}
+            onClick={() => this.addToCart(product)}
           >
             Adicionar ao Carrinho
           </button>
-        */}
         <CartButton />
         <Link to="/">Back</Link>
       </div>
