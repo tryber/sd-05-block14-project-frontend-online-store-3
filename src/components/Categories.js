@@ -29,7 +29,7 @@ class Categories extends React.Component {
                 name="categories"
                 id={obj.id}
                 checked={checked}
-                onClick={() => this.props.onClick(obj)}
+                onChange={() => this.props.onClick(obj)}
               />
               {obj.name}
             </label>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartButton from '../components/CartButton';
-// import AddButton from '../components/AddButton';
 
 class Details extends React.Component {
   constructor(props) {
