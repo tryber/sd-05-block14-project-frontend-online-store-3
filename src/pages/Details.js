@@ -19,7 +19,7 @@ class Details extends React.Component {
   getCart() {
     const cart = JSON.parse(localStorage.getItem('carrinho'));
     if (cart) return this.setState({ fullCart: cart });
-    this.setState({ fullCart: [] });
+    return this.setState({ fullCart: [] });
   }
 
   addToCart(product) {
@@ -38,11 +38,11 @@ class Details extends React.Component {
         <p>R${product.price}</p>
         <textarea data-testid="product-detail-evaluation" />
         <button
-            data-testid="product-detail-add-to-cart"
-            onClick={() => this.addToCart(product)}
-          >
-            Adicionar ao Carrinho
-          </button>
+          data-testid="product-detail-add-to-cart"
+          onClick={() => this.addToCart(product)}
+        >
+          Adicionar ao Carrinho
+        </button>
         <CartButton />
         <Link to="/">Back</Link>
       </div>
