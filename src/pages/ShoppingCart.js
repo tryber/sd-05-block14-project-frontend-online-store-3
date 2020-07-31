@@ -33,9 +33,10 @@ class ShoppingCart extends React.Component {
           <div key={product.id}>
             <p data-testid="shopping-cart-product-name">{product.title}</p>
             <img src={product.thumbnail} alt={product.title} />
-            <p data-testid="shopping-cart-product-quantity">1</p>
+            <p data-testid="shopping-cart-product-quantity">R$1</p>
           </div>
         ))}
+        <Link data-testid="checkout-products" to="/checkout">Finalizar Compra</Link>
       </div>
     );
   }
