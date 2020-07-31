@@ -48,7 +48,7 @@ class ReviewCart extends React.Component {
           ))}
         </div>
         <p>Total:{this.state.resumo.reduce((total, atual) =>
-          total + (atual.price * atual.quantity), 0
+          total + (atual.price * atual.quantity), 0,
         )}</p>
       </div>
     );
