@@ -13,7 +13,7 @@ class FormComprador extends React.Component {
       endereco: '',
       complemento: '',
       numero: '',
-      Cidade: ''
+      Cidade: '',
     };
     this.atdad = this.atdad.bind(this);
   }
