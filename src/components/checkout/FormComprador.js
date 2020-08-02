@@ -28,31 +28,27 @@ class FormComprador extends React.Component {
 
 
   cadastro() {
-    return inputDataString.map((input) => {
-      return (
-        <InputText
-          dataTestId={input.dataTestId}
-          value={this.state[input.name]}
-          key={input.name}
-          name={input.name}
-          onChange={this.atdad}
-        />
-      );
-    })
+    return inputDataString.map((input) => (
+      <InputText
+        dataTestId={input.dataTestId}
+        value={this.state[input.name]}
+        key={input.name}
+        name={input.name}
+        onChange={this.atdad}
+      />
+    ));
   }
 
-cadastro2() {
-    return inputDataNumber.map((input) => {
-      return (
-        <InputNumber
-          dataTestId={input.dataTestId}
-          value={this.state[input.name]}
-          key={input.name}
-          name={input.name}
-          onChange={this.atdad}
-        />
-      );
-    })
+  cadastro2() {
+    return inputDataNumber.map((input) => (
+      <InputNumber
+        dataTestId={input.dataTestId}
+        value={this.state[input.name]}
+        key={input.name}
+        name={input.name}
+        onChange={this.atdad}
+      />
+    ));
   }
 
   render() {
