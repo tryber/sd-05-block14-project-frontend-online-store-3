@@ -1,8 +1,7 @@
-import React from "react";
-
-class InputText extends React.Component {
+import React from 'react';
+class InputTextExtra extends React.Component {
   render() {
-    const { name, dataTestId, onChange, value } = this.props;
+    const { name, dataTestId, onChange, value, minlength } = this.props;
     return (      
       <input
         type="text"
@@ -12,8 +11,10 @@ class InputText extends React.Component {
         data-testid={dataTestId}
         onChange={onChange}
         value={value}
+        minLength={minlength}
+        maxLength={minlength}
       />
     );
   }
 }
-export default InputText;
+export default InputTextExtra;

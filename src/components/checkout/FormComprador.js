@@ -1,7 +1,9 @@
 import React from 'react';
-import Estados from '../checkout/estados';
-import InputData from '../checkout/InputData';
+// import Estados from '../checkout/estados';
+import inputDataString from './InputDataString';
+import inputDataNumber from './InputDataExtra';
 import InputText from '../checkout/InputText';
+import InputNumber from './InputTextExtra';
 // refazendo climate
 class FormComprador extends React.Component {
   constructor(props) {
@@ -24,25 +26,31 @@ class FormComprador extends React.Component {
 
   render() {
     return (
-      <div>
-        <form name="formComprador" method="get">
-          <h1>Informações do Comprador</h1>
-            {InputData.map((input, index) => {
-              return (
-                <InputText
-                  dataTestId={input.dataTestId} 
-                  value={this.state[input.name]}
-                  key={index}
-                  name={input.name}
-                  onChange={this.atdad}
-                />
-              );
-            })}
-          <select onChange={this.atdad}>
-            {Estados.map((estado) => <option key={estado}>{estado}</option>)}
-          </select>
-        </form>
-      </div>
+      <form name="formComprador" method="get">
+        <h1>Informações do Comprador</h1>
+        {inputDataString.map((input, index) => {
+          return (
+            <InputText
+              dataTestId={input.dataTestId}
+              value={this.state[input.name]}
+              key={index}
+              name={input.name}
+              onChange={this.atdad}
+            />
+          );
+        })}
+        {inputDataNumber.map((input, index) => {
+          return (
+            <InputNumber
+              dataTestId={input.dataTestId} 
+              value={this.state[input.name]}
+              key={index}
+              name={input.name}
+              onChange={this.atdad}
+            />
+          )
+        })}
+      </form>
     );
   }
 }

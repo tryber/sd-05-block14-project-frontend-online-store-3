@@ -28,3 +28,7 @@ const estados =
     'TO'];
 
 export default estados;
+
+/* <select onChange={this.atdad}>
+{Estados.map((estado) => <option key={estado}>{estado}</option>)
+</select> */
