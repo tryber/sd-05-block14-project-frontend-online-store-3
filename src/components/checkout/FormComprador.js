@@ -17,6 +17,8 @@ class FormComprador extends React.Component {
       Endereco: '',
     };
     this.atdad = this.atdad.bind(this);
+    this.cadastro = this.cadastro.bind(this);
+    this.cadastro2 = this.cadastro2.bind(this);
   }
   // atdados função que atualiza dados
   atdad(event) {
@@ -24,32 +26,41 @@ class FormComprador extends React.Component {
     this.setState(() => ({ [name]: value }));
   }
 
+
+  cadastro() {
+    return inputDataString.map((input) => {
+      return (
+        <InputText
+          dataTestId={input.dataTestId}
+          value={this.state[input.name]}
+          key={input.name}
+          name={input.name}
+          onChange={this.atdad}
+        />
+      );
+    })
+  }
+
+cadastro2() {
+    return inputDataNumber.map((input) => {
+      return (
+        <InputNumber
+          dataTestId={input.dataTestId}
+          value={this.state[input.name]}
+          key={input.name}
+          name={input.name}
+          onChange={this.atdad}
+        />
+      );
+    })
+  }
+
   render() {
     return (
       <form name="formComprador" method="get">
         <h1>Informações do Comprador</h1>
-        {inputDataString.map((input) => {
-          return (
-            <InputText
-              dataTestId={input.dataTestId}
-              value={this.state[input.name]}
-              key={input.name}
-              name={input.name}
-              onChange={this.atdad}
-            />
-          );
-        })}
-        {inputDataNumber.map((input) => {
-          return (
-            <InputNumber
-              dataTestId={input.dataTestId}
-              value={this.state[input.name]}
-              key={input.name}
-              name={input.name}
-              onChange={this.atdad}
-            />
-          );
-        })}
+        {this.cadastro()}
+        {this.cadastro2()}
       </form>
     );
   }
