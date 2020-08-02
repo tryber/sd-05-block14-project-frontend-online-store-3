@@ -21,7 +21,7 @@ const inputData = [
   },
   {
     name: 'Endereco',
-    dataTestId: 'checkou-adress',
+    dataTestId: 'checkout-address',
   },
 ]
 

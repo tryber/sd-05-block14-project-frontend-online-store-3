@@ -19,7 +19,7 @@ class FormComprador extends React.Component {
   // atdados função que atualiza dados
   atdad(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState(() => ({ [name]: value }))
   }
 
   render() {
@@ -27,17 +27,19 @@ class FormComprador extends React.Component {
       <div>
         <form name="formComprador" method="get">
           <h1>Informações do Comprador</h1>
-            {InputData.map((input) => {
+            {InputData.map((input, index) => {
               return (
-              <InputText
-              key={input.name}
-              name={input.name}
-              data-testid={input.dataTestId}
-              onChange={this.atdad} />
-              )
+                <InputText
+                  dataTestId={input.dataTestId} 
+                  value={this.state[input.name]}
+                  key={index}
+                  name={input.name}
+                  onChange={this.atdad}
+                />
+              );
             })}
           <select onChange={this.atdad}>
-            {Estados.map((estado) => <option>{estado}</option>)}
+            {Estados.map((estado) => <option key={estado}>{estado}</option>)}
           </select>
         </form>
       </div>
