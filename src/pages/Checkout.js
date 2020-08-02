@@ -1,6 +1,6 @@
 import React from 'react';
-import FormComprador from '../components/FormComprador';
-import ReviewCart from '../components/ReviewCart';
+import FormComprador from '../components/checkout/FormComprador';
+import ReviewCart from '../components/checkout/ReviewCart';
 
 class Checkout extends React.Component {
   render() {
