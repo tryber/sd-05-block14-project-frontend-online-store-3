@@ -11,6 +11,6 @@ const inputDataString = [
     name: 'Endereco',
     dataTestId: 'checkout-address',
   },
-]
+];
 
 export default inputDataString;

@@ -6,7 +6,7 @@ const inputDataExtra = [
     minlength: '11',
   },
   {
-    name:'CEP',
+    name: 'CEP',
     dataTestId: 'checkout-cep',
     minlength: '8',
   },
@@ -15,6 +15,6 @@ const inputDataExtra = [
     dataTestId: 'checkout-phone',
     minlength: '11',
   },
-]
+];
 
 export default inputDataExtra;

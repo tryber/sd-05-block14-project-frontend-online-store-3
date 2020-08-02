@@ -1,8 +1,9 @@
 import React from 'react';
+
 class InputTextExtra extends React.Component {
   render() {
     const { name, dataTestId, onChange, value, minlength } = this.props;
-    return (      
+    return (  
       <input
         type="text"
         required="required"
